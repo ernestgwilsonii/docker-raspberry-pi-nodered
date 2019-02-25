@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+
+  nodered:
+    image: ernestgwilsonii/docker-raspberry-pi-nodered:19.06 
+    hostname: nodered
+    ports:
+      # NodeRED unencrypted TCP 1880
+      - mode: host
+        target: 1880
+        published: 1880
+        protocol: tcp
+    networks:
+      - nodered-net1
+    volumes:
+      - type: bind
+        source: /opt/node-red
+        target: /root/.node-red
+    deploy:
+      labels:
+        local.description: "NodeRED"
+      restart_policy:
+        condition: on-failure
+
+networks:
+  nodered-net1:
+
