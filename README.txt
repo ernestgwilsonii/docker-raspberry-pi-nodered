@@ -6,17 +6,19 @@
 
 ###############################################################################
 # Docker build
-time docker build --no-cache -t ernestgwilsonii/docker-raspberry-pi-nodered:19.06 -f Dockerfile.armhf .
+# REF: https://hub.docker.com/r/arm32v7/node
+#time docker build --no-cache -t ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5 -f Dockerfile.armhf .
+time docker build -t ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5 -f Dockerfile.armhf .
 docker images
 
 # Verify 
-docker run -it -p 1880:1880 ernestgwilsonii/docker-raspberry-pi-nodered:19.06
+docker run -it -p 1880:1880 ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5
 # From another ssh session:
 #docker ps
 
 # Upload to Docker Hub
 docker login
-docker push ernestgwilsonii/docker-raspberry-pi-nodered:19.06
+docker push ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5
 ###############################################################################
 
 

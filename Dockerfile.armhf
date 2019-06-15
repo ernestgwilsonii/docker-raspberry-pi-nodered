@@ -1,4 +1,4 @@
-FROM arm32v7/node:11.10.0-stretch-slim
+FROM arm32v7/node:12.4.0-stretch-slim
 
 RUN apt-get update \
     && apt-get dist-upgrade -y \
