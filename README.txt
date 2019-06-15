@@ -3,6 +3,10 @@
 #        REF: https://nodered.org # 
 ###################################
 
+Note: Official NodeRED Docker for RPI - https://github.com/node-red/node-red-docker/tree/master/rpi
+Container: https://hub.docker.com/r/nodered/node-red-docker
+docker pull nodered/node-red-docker:0.20.5-slim-v10   # NodeRED v0.20.5 and Node.js v10.16.0
+
 
 ###############################################################################
 # Docker build
