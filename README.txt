@@ -3,22 +3,20 @@
 #        REF: https://nodered.org # 
 ###################################
 
-Note: Official NodeRED Docker for RPI - https://github.com/node-red/node-red-docker/tree/master/rpi
-Container: https://hub.docker.com/r/nodered/node-red-docker
-docker pull nodered/node-red-docker:0.20.5-slim-v10   # NodeRED v0.20.5 and Node.js v10.16.0
-
+docker pull nodered/node-red:2.1.3
 
 ###############################################################################
 # Docker build
 # REF: https://hub.docker.com/r/arm32v7/node
 #time docker build --no-cache -t ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5 -f Dockerfile.armhf .
-time docker build -t ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5 -f Dockerfile.armhf .
+#time docker build -t ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5 -f Dockerfile.armhf .
 docker images
 
 # Verify 
-docker run -it -p 1880:1880 ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5
+#docker run -it -p 1880:1880 ernestgwilsonii/docker-raspberry-pi-nodered:0.20.5
 # From another ssh session:
 #docker ps
+docker run -it -p 1880:1880 nodered/node-red:2.1.3
 
 # Upload to Docker Hub
 docker login
